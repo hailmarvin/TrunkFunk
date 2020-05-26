@@ -1,6 +1,6 @@
 # TrunkFunk
 
-![Thumbnail of Koronation](./Capture.png)
+![Thumbnail of Koronation](./Capture.PNG)
 
 *Uniting Africa Through Music*
 
