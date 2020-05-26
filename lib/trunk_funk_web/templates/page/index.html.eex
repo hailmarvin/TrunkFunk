@@ -1,0 +1,41 @@
+<div class="index-container">
+    <p class="intro text-white">
+        Welcome!
+    </p>
+
+    <div class="centre">
+        <div class="widthy">
+            <i class="scroll-down pb-1">Scroll-Down</i>
+        </div>
+    </div>
+</div>
+ 
+<div class="container-fluid mb-5 mt-5">
+    <h4 class="text-dark about" id="about">About</h4>
+    <div class="row">
+        <div class="col-sm-12 col-md-6"><img class="back-black" src="<%= Routes.static_path(@conn, "/images/ngoma.jpg") %>"/></div>
+        <div class="col-sm-12 col-md-6 text-dark">
+            <p class="mt-5">For a remarkable about page, all you need to do is figure out your company's unique identity,
+             and then share it with the world. Easy, right? Of course not. Your "About Us" page is one of
+              the most important pages on your website, and it needs to be well crafted. This profile also
+               happens to be one of the most commonly overlooked pages, which is why you should make it stand out.</p>
+        </div>
+    </div>
+</div>
+
+<div class="jumbotron paral paralsec">
+    <h1 class="display-3">Here is a heading 1</h1>  
+    <p class="lead">Here is a short description 1</p>
+    <p class="lead">
+        <a class="btn btn-info btn-lg btn-md" href="#" role="button">Here is a button 1</a>
+    </p>
+</div>
+ 
+<div class="jumbotron paral paralsec1">
+    <h1 class="display-3">Here is a heading 2</h1>
+    <p class="lead">Here is a short description 2</p>
+    <p class="lead">
+        <a class="btn btn-warning btn-lg btn-md" href="widgets.html" role="button">Here is a button 2</a>
+    </p>
+</div>
+ 

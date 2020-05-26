@@ -1,0 +1,38 @@
+<%= form_for @changeset, @action, [multipart: true], fn f -> %>
+  <%= if @changeset.action do %>
+    <div class="alert alert-danger">
+      <p>Oops, something went wrong! Please check the errors below.</p>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+  <%= text_input f, :name, class: "form-control", placeholder: "Name of Song" %>
+  <%= error_tag f, :name  %>
+  </div>
+
+  <div class="form-group">
+  <%= text_input f, :artist, class: "form-control", placeholder: "Artist" %>
+  <%= error_tag f, :artist  %>
+  </div>
+
+  <div class="form-group">
+  <%= text_input f, :featuring, class: "form-control", placeholder: "Featuring (Not required)" %>
+  <%= error_tag f, :featuring  %>
+  </div>
+
+  <div class="text-white">
+    <%= label f, :choose_album_art, class: "text-white" %>
+    <%= file_input f, :image, accept: "image/*", class: ""%>
+    <%= error_tag f, :image %>
+  </div>
+
+  <div class="text-white">
+    <%= label f, :choose_song, class: "text-white mt-2" %>
+    <%= file_input f, :audio, accept: "audio/*", class: ""%>
+    <%= error_tag f, :audio %>
+  </div>
+
+  <div>
+    <%= submit "Upload", class: "btn btn-orange-red mt-3" %>
+  </div>
+<% end %>

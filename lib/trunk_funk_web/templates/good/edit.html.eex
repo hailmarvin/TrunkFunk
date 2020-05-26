@@ -1,0 +1,5 @@
+<h1>Edit Good</h1>
+
+<%= render "form.html", Map.put(assigns, :action, Routes.good_path(@conn, :update, @good)) %>
+
+<span><%= link "Back", to: Routes.good_path(@conn, :index) %></span>

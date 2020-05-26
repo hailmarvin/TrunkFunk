@@ -1,0 +1,47 @@
+<div class="song-background">
+<div class="row m-1">
+  <div class="col-lg-4 col-md-4">
+    <img class="pl-4 pr-4" style="width: 100%;" src="<%= TrunkFunk.Album.url({@album.image, @album}) %>"/>
+  </div>  
+  <div class="col-lg-8 col-md-8 song-info pr-5">
+    <h3 class="text-white pt-4 pl-4 pr-4 song-name"><%= @album.name %></h3>
+    <p class="text-name text-small pl-4 song-name">By: <span class="pl-1"><%= @album.artist%></span>
+      <%= if @album.featuring do %>
+        <span class="text-name text-small pl-2 song-name">Ft <span class="pl-1"><%= @album.featuring %></span></span>
+      <% end %>
+    </p>
+          <audio
+              class="audio"
+              controls="controls"
+              controlsList="nodownload"
+              src="<%= TrunkFunk.Audio.url({@album.audio, @album}) %>">
+                  Your browser does not support the
+                  <code>audio</code> element.
+          </audio>
+          <br>
+          <br>
+        
+    <%= if @admin_user do %>
+    <span><%= link "Edit", class: "btn btn-outline-warning float-right ml-3 mr-4", to: Routes.album_path(@conn, :edit, @album.name) %></span>
+    <span><%= link "Delete", class: "btn btn-outline-danger float-right", to: Routes.album_path(@conn, :delete, @album.name) %></span>
+    <% end %>      
+  </div>  
+  <br>
+</div>
+
+<%= if @current_user do %>
+<div class="form-group m-4">
+  <textarea class="form-control"></textarea>
+  <button class="btn btn-outline-white float-right comment">Paste Comment</button>  
+  <h6 class="mt-5 comment">Comments</h6>
+  <ul class="collection list-group list-group-flush">
+  </ul>
+</div>
+<% end %>
+<br/>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    window.createSocket(<%= @album.id %>)
+  });
+</script>
+</div>

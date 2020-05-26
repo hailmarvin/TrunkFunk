@@ -1,0 +1,6 @@
+<div class="form-edit">
+<h1 class="sign-up text-white">Edit Song</h1>
+
+<%= render "form.html", Map.put(assigns, :action, Routes.album_path(@conn, :update, @album.name)) %>
+</div>
+<span><%= link "Back", class: "btn btn-outline-white float-right mr-5", to: Routes.album_path(@conn, :index) %></span>

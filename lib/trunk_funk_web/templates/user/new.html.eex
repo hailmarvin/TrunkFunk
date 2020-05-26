@@ -1,0 +1,7 @@
+<div class="form-sign-up">
+<h1 class="sign-up text-white">New User</h1>
+
+<%= render "form.html", Map.put(assigns, :action, Routes.user_path(@conn, :create)) %>
+
+<%= link "Back", class: "btn btn-outline-white float-right", to: Routes.page_path(@conn, :index) %>
+</div>

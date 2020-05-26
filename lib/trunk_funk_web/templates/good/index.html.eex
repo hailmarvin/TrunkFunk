@@ -1,0 +1,24 @@
+<div class="goods">
+<h4 class="sign-up pt-2">Merch</h4>
+<%= if @admin_user do %>
+<hr>
+<span><%= link "Add Merch", to: Routes.good_path(@conn, :new), class: "ml-5 btn btn-orange-red mb-1 mt-1" %></span>
+<hr>
+<% end %>
+  <table class="ml-1 mr-1 mt-2"> 
+    <%= for good <- @goods do %>   
+      <tr>
+        <td class="zoom items-align-center" >
+        </td>  
+
+        <td>    
+          <div>
+           <% mine = good.name |> String.capitalize %>
+           <strong class="text-white float-left ml-3 mt-2"><%= mine %></strong>
+           <strong class="text-white float-right ml-3 mt-2"><%= good.price %></strong>
+          </div>
+        </td>
+      </tr> 
+    <% end %>  
+  </table>
+</div>

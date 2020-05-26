@@ -1,0 +1,25 @@
+<div class="album-head contact-back">
+<div id="contact-back">
+<h3 class="text-black ml-3 pt-2">Music</h3>
+<hr/>
+  <div class="row ml-3 mr-3"> 
+    <%= for album <- @albums do %>
+      <div class="col-sm-4 mt-2">
+        <div class="items-align-center">
+          <img src="<%= TrunkFunk.Album.url({album.image, album}) %>" class="img-size" alt="Album Image" >
+          <div class="album-bottom">    
+            <div class="album-bottom-tint">
+              <% mine = album.name |> String.capitalize %>
+              <strong class="text-white float-left ml-3 mt-2"><%= mine %></strong>
+              <%= link "Listen", class: "btn btn-outline-white float-right mr-2 ml-3", to: Routes.album_path(@conn, :show, album.name) %>
+            </div>
+          </div>
+        </div>
+      </div> 
+    <% end %>     
+  </div>
+<%= if @admin_user do %>
+  <span><%= link "New song", class: "float-right mr-5 btn btn-orange-red mb-3 mt-3", to: Routes.album_path(@conn, :new) %></span>
+<% end %>
+</div>
+</div>
